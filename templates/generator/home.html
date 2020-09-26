@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title></title>
+    <style>
+    body{
+      background-color:#394989;
+    }
+    span{
+      font-size: 20px;
+      font-weight: bolder;
+      color:white;
+    }
+    h1{
+      color:#ffa931;
+      font-weight: bolder;
+      font-size: 65px;
+    }
+    .btn{
+      color:white;
+      font-size: 20px;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container" align="center">
+    <h1>PASSWORD GENERATOR</h1><br>
+    <form action="{% url 'password' %}">
+    <select  name="length">
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="5">5</option>
+    <option value="12">12</option>
+    <option value="4">4</option>
+    <option value="10">10</option>
+  </select> <span> Length</span>
+     <br><br>
+    <input type='checkbox' name="uppercase"> <span> &nbsp  UPPERCASE</span>
+    <br><br>
+    <input type="checkbox" name="numbers"> <span> &nbsp  NUMBERS</span>
+    <br><br>
+    <input type="checkbox" name="special">  <span> &nbsp SPECIAL CHARACTERS</span>
+    <br><br><br>
+    <input class="btn btn-warning btn-lg" type="submit" value="Generate Password">
+  </form><br><br>
+<a class="btn btn-warning btn-lg" href="{% url 'about'%}">ABOUT PAGE</a>
+</div>
+  </body>
+</html>
